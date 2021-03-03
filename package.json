@@ -10,16 +10,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:rewind.helloWorld"
+    "onView:rewind.views.timeline"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "rewind.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "views": {
+      "scm": [
+        {
+          "id": "rewind.views.timeline",
+          "name": "Timeline",
+          "contextualTitle": "Rewind"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -41,5 +44,9 @@
     "mocha": "^8.2.1",
     "typescript": "^4.1.3",
     "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "parse-diff": "^0.7.1",
+    "simple-git": "^2.35.2"
   }
 }
